@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tatui</title>
+    <link rel="stylesheet" href="css/extends.css" />
+ 
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start; /* Alinhar o conteúdo ao topo */
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0; /* Cor de fundo para visualização */
+            font-family: 'DM Sans', sans-serif;
+        }
+
+        section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px; /* Ajustar conforme necessário */
+        }
+
+        h1.titulo {
+            margin-top: 100px; /* Ajustar a margem superior e inferior do título */
+            font-size: 24px;
+            text-align: center;
+        }
+        .description {
+            margin: 20px 10px 0 10px;
+            font-size: 16px;
+            text-align: center;
+            color: #555;
+            max-width: 600px;
+        }
+
+        .gallery-container {
+            width: 300px;
+            height: 300px;
+            overflow: hidden;
+            position: relative;
+            border: 1px solid #ccc; /* Apenas para visualização */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .gallery-slide {
+            width: 300px;
+            height: 300px;
+            display: none;
+            position: absolute;
+            text-align: center;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .gallery-slide img {
+            width: 300px;
+            vertical-align: middle;
+        }
+
+        .gallery-slide.active {
+            display: block;
+            opacity: 1;
+        }
+
+        .gallery-slide:not(.active) {
+            opacity: 0;
+        }
+
+        .nav-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .nav-buttons button {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            background-color: #333;
+            color: #fff;
+            border-radius: 5px;
+        }
+
+        .nav-buttons button:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar__content max-width mb-0">
+          <a href="index.html" class="logo">
+            Roberta Costa
+          </a>
+          <ul class="navbar__links">
+            <li><a href="index.html#header">Início</a></li>
+            <li><a href="index.html#about">Sobre</a></li>
+            <li><a href="index.html#skills">Habilidades</a></li>
+            <li><a href="index.html#projects">Projetos</a></li>
+            <li><a href="index.html#footer">Contato</a></li>
+          </ul>
+          <div class="navbar__mobile">
+            <img src="assets/menu.svg" alt="menu" class="burguer" />
+            <ul class="mobile__links">
+              <li><a href="index.html#header">Início</a></li>
+              <li><a href="index.html#about">Sobre</a></li>
+              <li><a href="index.html#skills">Habilidades</a></li>
+              <li><a href="index.html#projects">Projetos</a></li>
+              <li><a href="index.html#footer">Contato</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <section>
+        <h1 class="titulo">Fotos do Evento - Tatuí</h1>
+        <div class="gallery-container">
+            <div class="gallery-slide active">
+                <img src="assets/banner2.jpg" alt="Descrição da imagem 1">
+            </div>
+            <div class="gallery-slide">
+                <img src="assets/banner1.jpg" alt="Descrição da imagem 2">
+            </div>
+            <div class="gallery-slide">
+                <img src="assets/banner3.jpg" alt="Descrição da imagem 3">
+            </div>
+            <!-- Adicione mais divs .gallery-slide conforme necessário -->
+        </div>
+        <div class="nav-buttons">
+            <button id="prev-btn">Anterior</button>
+            <button id="next-btn">Próximo</button>
+        </div>
+        <p class="description">          
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto, dignissimos rem corrupti aut porro autem quasi nobis soluta! Quidem quod consequatur ea ipsam, nobis iste sapiente totam nisi ratione perspiciatis?
+        </p>
+      </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            let slides = document.querySelectorAll('.gallery-slide');
+            let currentIndex = 0;
+
+            function showSlide(index) {
+                slides.forEach((slide, i) => {
+                    slide.classList.remove('active');
+                    if (i === index) {
+                        slide.classList.add('active');
+                    }
+                });
+            }
+
+            function nextSlide() {
+                currentIndex = (currentIndex + 1) % slides.length;
+                showSlide(currentIndex);
+            }
+
+            function prevSlide() {
+                currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+                showSlide(currentIndex);
+            }
+
+            document.getElementById('next-btn').addEventListener('click', nextSlide);
+            document.getElementById('prev-btn').addEventListener('click', prevSlide);
+
+        });
+    </script>
+    <script src="scripts/index.js"></script>
+</body>
+</html>

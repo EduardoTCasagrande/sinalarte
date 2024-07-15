@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/extends.css" />
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Todos Projetos - SinalArte</title>
+    <style>
+        .projects {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: space-around;
+        }
+        .project img{
+            max-width: 100%;
+            width: 160px;
+            height: 150px;
+            border-radius: 10px;
+        }
+        .project{
+            margin-bottom: 20px;
+            text-align: left;
+            border: 2px solid slategray;
+            border-radius: 10px;
+        }
+        .project h3{
+            max-width: 140px;
+            height: 100px;
+            margin: 5px;
+            text-align: center;
+        }
+        .project a{
+          width: 160px;
+          text-align: center;
+        }
+    </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="navbar__content max-width mb-0">
+      <a href="index.html" class="logo">
+        Roberta Costa
+      </a>
+      <ul class="navbar__links">
+        <li><a href="index.html#header">Início</a></li>
+        <li><a href="index.html#about">Sobre</a></li>
+        <li><a href="index.html#skills">Habilidades</a></li>
+        <li><a href="index.html#projects">Projetos</a></li>
+        <li><a href="index.html#footer">Contato</a></li>
+      </ul>
+      <div class="navbar__mobile">
+        <img src="assets/menu.svg" alt="menu" class="burguer" />
+        <ul class="mobile__links">
+          <li><a href="index.html#header">Início</a></li>
+          <li><a href="index.html#about">Sobre</a></li>
+          <li><a href="index.html#skills">Habilidades</a></li>
+          <li><a href="index.html#projects">Projetos</a></li>
+          <li><a href="index.html#footer">Contato</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+    <section class="projects">
+        <div class="project">
+            <img src="assets/banner1.jpg" alt="Projeto 1">
+            <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit</h3>
+            <a href="tatui.html" class="btn btn-primary">Saiba Mais!</a>
+        </div>
+        <div class="project">
+            <img src="assets/banner2.jpg" alt="Projeto 2">
+            <h3>Projeto 2</h3>
+            <a href="tatui.html" class="btn btn-primary">Saiba Mais!</a>
+        </div>
+        <div class="project">
+            <img src="assets/banner3.jpg" alt="Projeto 3">
+            <h3>Projeto 3</h3>
+            <a href="tatui.html" class="btn btn-primary">Saiba Mais!</a>
+        </div>
+        <div class="project">
+            <img src="assets/IMG-20240711-WA0060.jpg" alt="Projeto 4">
+            <h3>Projeto 4</h3>
+            <a href="tatui.html" class="btn btn-primary">Saiba Mais!</a>
+        </div>
+        <!-- Adicione mais projetos conforme necessário -->
+    </section>
+
+    <script src="scripts/index.js"></script>
+</body>
+</html>
